@@ -41,3 +41,37 @@ let axisX = document.getElementById('hb').addEventListener('mousemove', function
     x.innerHTML = e.offsetX;
     y.innerHTML = e.offsetY;
 })
+
+let form = document.getElementById('addform');
+let itemlist = document.getElementById('ullist');
+
+form.addEventListener('submit', addItem);
+itemlist.addEventListener('click', removeItem);
+
+function addItem(e){
+    e.preventDefault();
+
+    let newItem = document.getElementById('text-id').value;
+    let li = document.createElement('li');
+    li.className = 'items';
+
+    li.appendChild(document.createTextNode(newItem));
+
+    itemlist.appendChild(li);
+
+    let deletebtn = document.createElement('button');
+    deletebtn.className = 'remove';
+
+    deletebtn.appendChild(document.createTextNode('X'));
+
+    li.appendChild(deletebtn);
+}
+
+function removeItem(e){
+    if(e.target.classList.contains('remove')){
+        if(confirm('Are you sure ?')){
+            let li = e.target.parentElement;
+            itemlist.removeChild(li);
+        }
+    }
+}

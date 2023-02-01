@@ -14,23 +14,17 @@
     <div class="main">
         <div class="box">
             <h2>Add Items</h2>
-            <input type="text" class="text"> 
-            <input type="submit" class="button">
+            <form id="addform">
+                <input type="text" class="text" id="text-id"> 
+                <input type="submit" class="button" value="submit">
+            </form>
             <h2>Items</h2>
-            <table class="list">
-                <tr>
-                    <td class="items">Item 1</td>
-                </tr>
-                <tr>
-                    <td class="items">Item 2</td>
-                </tr>
-                <tr>
-                    <td class="items">Item 3</td>
-                </tr>
-                <tr>
-                    <td class="items">Item 4</td>
-                </tr>
-            </table>
+            <ul class="list" id="ullist">
+                    <li class="items">Item 1 <button class="remove">x</button></li>
+                    <li class="items">Item 2 <button class="remove">x</button></li>               
+                    <li class="items">Item 3 <button class="remove">x</button></li>
+                    <li class="items">Item 4 <button class="remove">x</button></li>
+            </ul>
             <br>
             <button class="button" id="btn">Click Here</button>
             <br><br>
@@ -39,7 +33,7 @@
             </div>
             <br>
             <div id="hb">
-                <p>Position of mouse.<br>MouseX: <span id="x"></span><br>MouseY: </p><span id="y"></span>
+                <p>Position of mouse.<br>MouseX: <span id="x"></span><br>MouseY: <span id="y"></span></p>
             </div>
         </div>
     </div>
