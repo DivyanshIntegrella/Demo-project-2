@@ -55,8 +55,11 @@ function addItem(e){
     let li = document.createElement('li');
     li.className = 'items';
 
+    if (newItem == "") {
+        return isempty();
+    }
+    
     li.appendChild(document.createTextNode(newItem));
-
     itemlist.appendChild(li);
 
     let deletebtn = document.createElement('button');
@@ -65,6 +68,7 @@ function addItem(e){
     deletebtn.appendChild(document.createTextNode('X'));
 
     li.appendChild(deletebtn);
+    clearField();
 }
 
 function removeItem(e){
@@ -74,4 +78,12 @@ function removeItem(e){
             itemlist.removeChild(li);
         }
     }
+}
+
+function isempty(){
+    alert("Enter Valid Value");
+}
+
+function clearField(){
+    document.getElementById('text-id').value = "";
 }
